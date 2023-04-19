@@ -1,0 +1,29 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <!-- firstName -->
+    <div>
+        <input type="text" formControlName="firstName" placeholder="Votre prénom">
+        <div *ngIf="submitted && f.firstName.errors">
+            <div *ngIf="f.firstName.errors.required">Vous devez renseigner un pseudo</div>
+            <div *ngIf="f.firstName.errors.pattern">Votre pseudo est invalide</div>
+        </div>
+    </div>
+    <!-- email -->
+    <div>
+        <input type="email" formControlName="email" placeholder="Votre email">
+        <div *ngIf="submitted && f.email.errors">
+            <div *ngIf="f.email.errors.required">Vous devez renseigner une email</div>
+            <div *ngIf="f.email.errors.email">Votre email est invalide</div>
+        </div>
+    </div>
+    <!-- password -->
+    <div>
+        <input type="password" formControlName="password" placeholder="Votre mot de passe">
+        <div *ngIf="submitted && f.password.errors">
+            <div *ngIf="f.password.errors.required">Vous devez renseigner un mot de passe</div>
+            <div *ngIf="f.password.errors.minlength">Votre mot de passe doit comporter au moins 6 caractères</div>
+        </div>
+    </div>
+    <div>
+        <button type="submit">Valider mon formulaire</button>
+    </div>
+</form>
