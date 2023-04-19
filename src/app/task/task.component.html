@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col 6">
+        <div *ngFor="let task of tasks">
+            {{ task.name }}
+            <button (click)="deleteTask(task.key)">Supprimer</button>
+        </div>
+
+        <form (ngSubmit)="addTask()">
+            <input [(ngModel)]="newTask" name="newTask" placeholder="Nouvelle tâche">
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { Router, RouterStateSnapshot } from "@angular/router";
 import { AuthService } from "./auth.service";
 
 export const pokemonGuard = () => {
+    return true;
     const router = inject(Router);
     const authService = inject(AuthService);
 
